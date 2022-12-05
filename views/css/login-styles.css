@@ -1,0 +1,116 @@
+* {
+  font-family: "Arial Black";
+}
+
+@-webkit-keyframes bggradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes bggradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+header {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(-45deg, rgb(169, 243, 254), rgb(138, 11, 154) 50%, rgb(255, 201, 113));
+  background-size: 200% 200%;
+  -webkit-animation: bggradient 7s ease-in-out infinite;
+          animation: bggradient 7s ease-in-out infinite;
+  overflow: hidden;
+  z-index: 2;
+}
+header .toplogo {
+  position: absolute;
+  display: inline-block;
+  font-size: 30px;
+  border-bottom: 5px solid white;
+  left: 60px;
+  bottom: 0px;
+  font-weight: 600;
+}
+header ul {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+header ul li {
+  list-style: none;
+  margin-right: 40px;
+  font-size: 30px;
+}
+header ul li a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  display: inline-block;
+  transition: 0.3s;
+}
+header ul li a::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: 0.3s;
+  transform: translateX(-50%);
+}
+header ul li a:hover::after {
+  width: 100%;
+}
+
+section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  box-shadow: 10px 5px 10px black;
+  width: 400px;
+  height: 250px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+section .error {
+  margin-left: 20px;
+  color: red;
+}
+section form {
+  font-weight: 600;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+section form button {
+  font-weight: 600;
+  width: 200px;
+  height: 40px;
+  background-color: rgb(182, 135, 182);
+  border-radius: 5px;
+}/*# sourceMappingURL=login-styles.css.map */

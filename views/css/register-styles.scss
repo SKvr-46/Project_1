@@ -1,0 +1,120 @@
+$cpurple: rgb(138, 11, 154);
+$cwhite: white;
+$cblack: black;
+$cred: red;
+$clight_purple: rgb(182, 135, 182);
+$clight_blue:  rgb(169, 243, 254);
+$clight_orange: rgb(255, 201, 113);
+
+* {
+    font-family: "Arial Black";
+  }
+
+  @keyframes bggradient{
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+header{
+    position: fixed;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    background: linear-gradient(-45deg, $clight_blue, $cpurple 50% ,$clight_orange);
+    background-size: 200% 200%;
+    animation: bggradient 7s ease-in-out infinite;
+    overflow: hidden;
+    z-index: 2;
+
+    & .toplogo {
+        position: absolute;
+        left: 60px;
+        bottom: 0px;
+        display: inline-block;
+        font-size: 30px;
+        border-bottom: 5px solid $cwhite;
+        font-weight: 600;
+    }
+
+    & ul {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+
+        & li {
+            list-style: none;
+            margin-right: 40px;
+            font-size: 30px;
+
+            & a {
+                position: relative;
+                text-decoration: none;
+                color: black;
+                display: inline-block;
+                transition: .3s;
+
+                &::after{ //参考資料あり
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    content: '';
+                    width: 0;
+                    height: 2px;
+                    background-color: $cwhite;
+                    transition: .3s;
+                    transform: translateX(-50%);
+                }
+
+                &:hover::after{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow:10px 5px 10px black;
+    width: 400px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 10px;
+
+
+    & form {
+        font-weight: 600;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        & button {
+            font-weight: 600;
+            width: 200px;
+            height: 40px;
+            background-color: rgb(182, 135, 182);
+            border-radius: 5px;
+
+        }
+    }
+}
