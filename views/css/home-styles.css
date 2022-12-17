@@ -1,3 +1,11 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding-top: 60px;
+}
+
 @-webkit-keyframes bggradient {
   0% {
     background-position: 0% 50%;
@@ -9,6 +17,7 @@
     background-position: 0% 50%;
   }
 }
+
 @keyframes bggradient {
   0% {
     background-position: 0% 50%;
@@ -83,6 +92,7 @@ header .toplogo {
   height: 90px;
   width: 200px;
   font-size: 40px;
+  font-weight: 800;
   margin-top: 5px;
   margin-left: 20px;
   border: 0px solid rgb(57, 62, 70);
@@ -128,41 +138,43 @@ header .toplogo span {
     transform: rotate(0deg);
   }
 }
-section {
-  transform: translateY(30px);
+.integration {
   width: 100%;
-  height: 600px;
+  height: 700px;
+  z-index: 10;
 }
-section .top_wrapper {
+.integration .top_wrapper {
   position: relative;
   width: 100%;
-  height: 600px;
-  background-color: rgba(253, 112, 19, 0.4);
+  height: 700px;
+  background-color: rgb(255, 201, 113);
 }
-section .top_wrapper .ulwrapper {
+.integration .top_wrapper .ulwrapper {
   position: absolute;
-  top: 30%;
+  top: 200px;
   left: 60%;
   height: 600px;
 }
-section .top_wrapper .ulwrapper ul {
+.integration .top_wrapper .ulwrapper ul {
   display: flex;
   flex-direction: column;
 }
-section .top_wrapper .ulwrapper ul li {
+.integration .top_wrapper .ulwrapper ul li {
   list-style: none;
   margin-bottom: 30px;
 }
-section .top_wrapper .ulwrapper ul li:hover {
+.integration .top_wrapper .ulwrapper ul li:hover {
   cursor: pointer;
 }
-section .top_wrapper .ulwrapper ul li a {
+.integration .top_wrapper .ulwrapper ul li a {
+  color: rgb(34, 40, 49);
+  text-decoration: none;
   position: relative;
   font-size: 30px;
   display: inline-block;
   transition: 0.3s;
 }
-section .top_wrapper .ulwrapper ul li a::after {
+.integration .top_wrapper .ulwrapper ul li a::after {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -173,21 +185,21 @@ section .top_wrapper .ulwrapper ul li a::after {
   transition: 0.3s;
   transform: translateX(-50%);
 }
-section .top_wrapper .ulwrapper ul li a:hover::after {
+.integration .top_wrapper .ulwrapper ul li a:hover::after {
   width: 100%;
 }
-section .top_wrapper .gear_1 {
+.integration .top_wrapper .gear_1 {
   position: absolute;
-  top: 140px;
+  top: 200px;
   left: 80px;
   width: 200px;
   height: 200px;
   background: gray;
   border-radius: 100%;
-  -webkit-animation: 10s linear infinite rotate_gear_1;
-          animation: 10s linear infinite rotate_gear_1;
+  -webkit-animation: 8s linear infinite rotate_gear_1;
+          animation: 8s linear infinite rotate_gear_1;
 }
-section .top_wrapper .gear_1 .bar_1 {
+.integration .top_wrapper .gear_1 .bar_1 {
   position: absolute;
   display: block;
   transform: translate(70px, -18px);
@@ -195,7 +207,7 @@ section .top_wrapper .gear_1 .bar_1 {
   height: 240px;
   background-color: gray;
 }
-section .top_wrapper .gear_1 .bar_2 {
+.integration .top_wrapper .gear_1 .bar_2 {
   position: absolute;
   display: block;
   transform: translate(70px, -18px) rotate(45deg);
@@ -203,7 +215,7 @@ section .top_wrapper .gear_1 .bar_2 {
   height: 240px;
   background-color: gray;
 }
-section .top_wrapper .gear_1 .bar_3 {
+.integration .top_wrapper .gear_1 .bar_3 {
   position: absolute;
   display: block;
   transform: translate(70px, -18px) rotate(90deg);
@@ -211,7 +223,7 @@ section .top_wrapper .gear_1 .bar_3 {
   height: 240px;
   background-color: gray;
 }
-section .top_wrapper .gear_1 .bar_4 {
+.integration .top_wrapper .gear_1 .bar_4 {
   position: absolute;
   display: block;
   transform: translate(70px, -18px) rotate(135deg);
@@ -219,7 +231,7 @@ section .top_wrapper .gear_1 .bar_4 {
   height: 240px;
   background-color: gray;
 }
-section .top_wrapper .gear_1::after {
+.integration .top_wrapper .gear_1::after {
   content: "";
   position: absolute;
   display: block;
@@ -229,7 +241,7 @@ section .top_wrapper .gear_1::after {
   background-color: black;
   border-radius: 100%;
 }
-section .top_wrapper .gear_1 .circle {
+.integration .top_wrapper .gear_1 .circle {
   position: absolute;
   background-color: gray;
   width: 130px;
@@ -238,7 +250,7 @@ section .top_wrapper .gear_1 .circle {
   border-radius: 100%;
   z-index: 2;
 }
-section .top_wrapper .gear_1 .circle::after {
+.integration .top_wrapper .gear_1 .circle::after {
   content: "";
   position: absolute;
   display: block;
@@ -250,18 +262,18 @@ section .top_wrapper .gear_1 .circle::after {
   z-index: 3;
   opacity: 0.6;
 }
-section .top_wrapper .gear_2 {
+.integration .top_wrapper .gear_2 {
   position: absolute;
-  top: 250px;
+  top: 320px;
   left: 280px;
   width: 200px;
   height: 200px;
   background: gray;
   border-radius: 100%;
-  -webkit-animation: 10s linear infinite rotate_gear_2;
-          animation: 10s linear infinite rotate_gear_2;
+  -webkit-animation: 8s linear infinite rotate_gear_2;
+          animation: 8s linear infinite rotate_gear_2;
 }
-section .top_wrapper .gear_2 .bar_1 {
+.integration .top_wrapper .gear_2 .bar_1 {
   position: absolute;
   display: block;
   transform: translate(70px, -18px);
@@ -269,7 +281,7 @@ section .top_wrapper .gear_2 .bar_1 {
   height: 240px;
   background-color: gray;
 }
-section .top_wrapper .gear_2 .bar_2 {
+.integration .top_wrapper .gear_2 .bar_2 {
   position: absolute;
   display: block;
   transform: translate(70px, -18px) rotate(45deg);
@@ -277,7 +289,7 @@ section .top_wrapper .gear_2 .bar_2 {
   height: 240px;
   background-color: gray;
 }
-section .top_wrapper .gear_2 .bar_3 {
+.integration .top_wrapper .gear_2 .bar_3 {
   position: absolute;
   display: block;
   transform: translate(70px, -18px) rotate(90deg);
@@ -285,7 +297,7 @@ section .top_wrapper .gear_2 .bar_3 {
   height: 240px;
   background-color: gray;
 }
-section .top_wrapper .gear_2 .bar_4 {
+.integration .top_wrapper .gear_2 .bar_4 {
   position: absolute;
   display: block;
   transform: translate(70px, -18px) rotate(135deg);
@@ -293,7 +305,7 @@ section .top_wrapper .gear_2 .bar_4 {
   height: 240px;
   background-color: gray;
 }
-section .top_wrapper .gear_2::after {
+.integration .top_wrapper .gear_2::after {
   content: "";
   position: absolute;
   display: block;
@@ -303,7 +315,7 @@ section .top_wrapper .gear_2::after {
   background-color: black;
   border-radius: 100%;
 }
-section .top_wrapper .gear_2 .circle {
+.integration .top_wrapper .gear_2 .circle {
   position: absolute;
   background-color: gray;
   width: 130px;
@@ -312,7 +324,7 @@ section .top_wrapper .gear_2 .circle {
   border-radius: 100%;
   z-index: 2;
 }
-section .top_wrapper .gear_2 .circle::after {
+.integration .top_wrapper .gear_2 .circle::after {
   content: "";
   position: absolute;
   display: block;
@@ -323,4 +335,48 @@ section .top_wrapper .gear_2 .circle::after {
   border-radius: 100%;
   z-index: 3;
   opacity: 0.6;
+}
+
+#section1 {
+  background-color: rgb(224, 249, 123);
+  width: 100%;
+  height: 600px;
+}
+#section1::before {
+  content: "";
+  display: block;
+  height: 120px;
+  margin-top: -120px;
+}
+
+#section2 {
+  background-color: rgb(169, 243, 254);
+  width: 100%;
+  height: 600px;
+}
+#section2::before {
+  content: "";
+  background-color: rgb(224, 249, 123);
+  display: block;
+  height: 120px;
+  margin-top: -120px;
+}
+
+#section3 {
+  background-color: rgb(113, 245, 146);
+  width: 100%;
+  height: 600px;
+}
+#section3::before {
+  content: "";
+  background-color: rgb(169, 243, 254);
+  display: block;
+  height: 120px;
+  margin-top: -120px;
+}
+
+.foot {
+  margin-top: 10px;
+  border-top: solid 1px rgb(34, 40, 49);
+  text-align: center;
 }/*# sourceMappingURL=home-styles.css.map */

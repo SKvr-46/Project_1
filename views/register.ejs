@@ -5,15 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="register-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <title>Document</title>
 </head>
 <body>
     <header>
         <p class="toplogo">Register Page</p>
-        <ul>
+        <ul class="base-menu">
             <li><a href="/">HOME</a></li>
             <li><a href="login">Login</a></li>
         </ul>
+        <i class="fa-solid fa-bars fa-2xl menu-icon">
+            <div class="menu">
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="login">Login</a></li>
+                </ul>
+            </div>
+        </i>
     </header>
     <section>
         <form action="/register" method="POST">

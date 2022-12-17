@@ -10,6 +10,20 @@ $clight_orange: rgb(255, 201, 113);
     font-family: "Arial Black";
   }
 
+$breakpoint: (   //メディアクエリ
+  sp: 'screen and (max-width: 767px)',
+  tab: 'screen and (min-width: 768px)',
+  pc: 'screen and (min-width: 1025px)'
+);
+
+@mixin mq($bp) {
+    @media #{map-get($breakpoint, $bp)} {
+     @content;
+    }
+  }
+
+
+
   @keyframes bggradient{
     0% {
       background-position: 0% 50%;
@@ -34,6 +48,73 @@ header{
     animation: bggradient 7s ease-in-out infinite;
     overflow: hidden;
     z-index: 2;
+    overflow: visible;
+
+    & .menu-icon {
+        display: none;
+        
+        @include mq(sp) {
+            display: block;
+            position: fixed;
+            top: 55px;
+            right: 50px;
+
+            &:hover .menu {  
+                position: fixed;
+                display: flex;
+                top: 70px;
+                right: 10px;
+                width: 200px;
+                height: 200px;
+                background-color: $cblack;
+                border: 0 solid $cblack;
+                border-radius: 20px;
+
+                & ul {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+        
+                    & li {
+                        list-style: none;
+                        font-size: 20px;
+        
+                      & a {
+                        position: relative;
+                        text-decoration: none;
+                        color: $cwhite;
+                        display: inline-block;
+                        transition: .3s;
+        
+                        &::after{ 
+                            position: absolute;
+                            bottom: -20px;
+                            left: 50%;
+                            content: '';
+                            width: 0;
+                            height: 2px;
+                            background-color: $cwhite;
+                            transition: .3s;
+                            transform: translateX(-50%);
+                        }
+        
+                        &:hover::after{
+                            width: 100%;
+                        }
+                      }
+        
+                    }
+                 }
+
+            }
+        }
+
+        & .menu {  
+            display: none;  
+    }
+}
+
+      
 
     & .toplogo {
         position: absolute;
@@ -45,13 +126,18 @@ header{
         font-weight: 600;
     }
 
-    & ul {
+    & .base-menu {
         position: absolute;
         top: 10px;
         right: 20px;
         display: flex;
         flex-direction: row;
         justify-content: end;
+
+        @include mq(sp) {
+            display: none;
+        }
+
 
         & li {
             list-style: none;
@@ -61,11 +147,11 @@ header{
             & a {
                 position: relative;
                 text-decoration: none;
-                color: black;
+                color: $cblack;
                 display: inline-block;
                 transition: .3s;
 
-                &::after{ //参考資料あり
+                &::after{ 
                     position: absolute;
                     bottom: 0;
                     left: 50%;
@@ -82,6 +168,7 @@ header{
                 }
             }
         }
+        
     }
 }
 

@@ -1,3 +1,6 @@
+npm init
+
+
 
 npm i -D
 dotenv

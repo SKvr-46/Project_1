@@ -1,4 +1,4 @@
-
+//env
 if(process.env.NODE_ENV !== "production") {
     require("dotenv").config()
 }
@@ -53,6 +53,10 @@ app.get("/register",checkNotAuthenticated, (req, res) => {
 app.get("/login", checkNotAuthenticated, (req, res) => {
     res.render("login.ejs")
 })
+
+
+
+
 
 app.post("/login", checkNotAuthenticated, passport.authenticate("local", {  
     successRedirect: "/",

@@ -38,6 +38,62 @@ header {
           animation: bggradient 7s ease-in-out infinite;
   overflow: hidden;
   z-index: 2;
+  overflow: visible;
+}
+header .menu-icon {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  header .menu-icon {
+    display: block;
+    position: fixed;
+    top: 55px;
+    right: 50px;
+  }
+  header .menu-icon:hover .menu {
+    position: fixed;
+    display: flex;
+    top: 70px;
+    right: 10px;
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    border: 0 solid black;
+    border-radius: 20px;
+  }
+  header .menu-icon:hover .menu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  header .menu-icon:hover .menu ul li {
+    list-style: none;
+    font-size: 20px;
+  }
+  header .menu-icon:hover .menu ul li a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    transition: 0.3s;
+  }
+  header .menu-icon:hover .menu ul li a::after {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: 0.3s;
+    transform: translateX(-50%);
+  }
+  header .menu-icon:hover .menu ul li a:hover::after {
+    width: 100%;
+  }
+}
+header .menu-icon .menu {
+  display: none;
 }
 header .toplogo {
   position: absolute;
@@ -48,7 +104,7 @@ header .toplogo {
   border-bottom: 5px solid white;
   font-weight: 600;
 }
-header ul {
+header .base-menu {
   position: absolute;
   top: 10px;
   right: 20px;
@@ -56,19 +112,24 @@ header ul {
   flex-direction: row;
   justify-content: end;
 }
-header ul li {
+@media screen and (max-width: 767px) {
+  header .base-menu {
+    display: none;
+  }
+}
+header .base-menu li {
   list-style: none;
   margin-right: 40px;
   font-size: 30px;
 }
-header ul li a {
+header .base-menu li a {
   position: relative;
   text-decoration: none;
   color: black;
   display: inline-block;
   transition: 0.3s;
 }
-header ul li a::after {
+header .base-menu li a::after {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -79,7 +140,7 @@ header ul li a::after {
   transition: 0.3s;
   transform: translateX(-50%);
 }
-header ul li a:hover::after {
+header .base-menu li a:hover::after {
   width: 100%;
 }
 

@@ -1,13 +1,26 @@
 $cpurple: rgb(138, 11, 154);
 $cwhite: white;
 $cblack: black;
-$cred: red;
+$cred: rgb(255, 0, 0);
 $clight_orange: rgb(255, 201, 113);
 $clight_purple: rgb(182, 135, 182);
 $clight_blue:  rgb(169, 243, 254);
 
 * {
     font-family: "Arial Black";
+  }
+
+
+  $breakpoint: (
+  sp: 'screen and (max-width: 767px)',
+  tab: 'screen and (min-width: 768px)',
+  pc: 'screen and (min-width: 1025px)'
+);
+
+@mixin mq($bp) {
+    @media #{map-get($breakpoint, $bp)} {
+     @content;
+    }
   }
 
   @keyframes bggradient{
@@ -35,54 +48,119 @@ header{
     overflow: hidden;
     z-index: 2;
 
-    & .toplogo{
-        position: absolute;
-        display: inline-block;
-        font-size: 30px;
-        border-bottom: 5px solid $cwhite;
-        left: 60px;
-        bottom: 0px;
-        font-weight: 600;
-   }
+    & .menu-icon {
+        display: none;
+        
+        @include mq(sp) {
+            display: block;
+            position: fixed;
+            top: 55px;
+            right: 50px;
 
-    & ul {
-        position: absolute;
-        top: 10px;
-        right: 20px;
-        display: flex;
-        flex-direction: row;
-        justify-content: end;
+        &:hover .menu {
+            position: fixed;
+            display: flex;
+            top: 70px;
+            right: 10px;
+            width: 200px;
+            height: 200px;
+            background-color: $cblack;
+            border: 0 solid $cblack;
+            border-radius: 20px;
+      
+            & ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
 
-        & li {
-            list-style: none;
-            margin-right: 40px;
-            font-size: 30px;
+                & li{
+                    list-style: none;
+                    font-size: 20px;
 
-            & a {
-                text-decoration: none;
-                color: black;
-                position: relative;
-                display: inline-block;
-                transition: .3s;
-
-                &::after{ 
-                    position: absolute;
-                    bottom: 0;
-                    left: 50%;
-                    content: '';
-                    width: 0;
-                    height: 2px;
-                    background-color: $cwhite;
-                    transition: .3s;
-                    transform: translateX(-50%);
-                }
-
-                &:hover::after{
-                    width: 100%;
+                    & a {
+                        position: relative;
+                        text-decoration: none;
+                        color: $cwhite;
+                        display: inline-block;
+                        transition: .3s;
+        
+                        &::after{ 
+                            position: absolute;
+                            bottom: -20px;
+                            left: 50%;
+                            content: '';
+                            width: 0;
+                            height: 2px;
+                            background-color: $cwhite;
+                            transition: .3s;
+                            transform: translateX(-50%);
+                        }
+        
+                        &:hover::after{
+                            width: 100%;
+                        }
+                    }
                 }
             }
         }
     }
+    & .menu {  
+        display: none;  
+    }
+}
+
+        & .toplogo{
+            position: absolute;
+            display: inline-block;
+            font-size: 30px;
+            border-bottom: 5px solid $cwhite;
+            left: 60px;
+            bottom: 0px;
+            font-weight: 600;
+    }
+
+        & .base-menu {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+
+            @include mq(sp) {
+                display: none;
+            }
+
+            & li {
+                list-style: none;
+                margin-right: 40px;
+                font-size: 30px;
+
+                & a {
+                    text-decoration: none;
+                    color: black;
+                    position: relative;
+                    display: inline-block;
+                    transition: .3s;
+
+                    &::after{ 
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        content: '';
+                        width: 0;
+                        height: 2px;
+                        background-color: $cwhite;
+                        transition: .3s;
+                        transform: translateX(-50%);
+                    }
+
+                    &:hover::after{
+                        width: 100%;
+                    }
+                }
+            }
+        }
 }
 
 
