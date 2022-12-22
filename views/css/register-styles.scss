@@ -22,6 +22,33 @@ $breakpoint: (   //メディアクエリ
     }
   }
 
+@mixin lineDeco {
+    & a {
+        color: $cblack;
+        text-decoration: none;
+        position: relative;
+        font-size: 30px;
+        display: inline-block;
+        transition: .3s;
+
+        &::after{ 
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            content: '';
+            width: 0;
+            height: 2px;
+            background-color: $corange;
+            transition: .3s;
+            transform: translateX(-50%);
+        }
+
+        &:hover::after{
+            width: 100%;
+        }    
+     }
+}
+
 
 
   @keyframes bggradient{
@@ -144,29 +171,7 @@ header{
             margin-right: 40px;
             font-size: 30px;
 
-            & a {
-                position: relative;
-                text-decoration: none;
-                color: $cblack;
-                display: inline-block;
-                transition: .3s;
-
-                &::after{ 
-                    position: absolute;
-                    bottom: 0;
-                    left: 50%;
-                    content: '';
-                    width: 0;
-                    height: 2px;
-                    background-color: $cwhite;
-                    transition: .3s;
-                    transform: translateX(-50%);
-                }
-
-                &:hover::after{
-                    width: 100%;
-                }
-            }
+        @include lineDeco;
         }
         
     }

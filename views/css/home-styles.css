@@ -337,6 +337,50 @@ header .toplogo span {
   opacity: 0.6;
 }
 
+#article_section {
+  background-color: #b19cf5;
+  width: 100%;
+  height: 600px;
+}
+#article_section::before {
+  content: "";
+  display: block;
+  height: 120px;
+  margin-top: -120px;
+}
+#article_section ul {
+  display: flex;
+  flex-direction: column;
+}
+#article_section ul li {
+  list-style: none;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 15px;
+}
+#article_section ul li a {
+  color: rgb(34, 40, 49);
+  text-decoration: none;
+  position: relative;
+  font-size: 30px;
+  display: inline-block;
+  transition: 0.3s;
+}
+#article_section ul li a::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: rgb(253, 112, 19);
+  transition: 0.3s;
+  transform: translateX(-50%);
+}
+#article_section ul li a:hover::after {
+  width: 100%;
+}
+
 #section1 {
   background-color: rgb(224, 249, 123);
   width: 100%;
@@ -344,6 +388,7 @@ header .toplogo span {
 }
 #section1::before {
   content: "";
+  background-color: #b19cf5;
   display: block;
   height: 120px;
   margin-top: -120px;

@@ -6,6 +6,7 @@ $clight_blue:  rgb(169, 243, 254);
 $clight_yellow: rgb(224, 249, 123);
 $clight_green: rgb(113, 245, 146);
 $clight_orange: rgb(255, 201, 113);
+$clight_purple: #b19cf5;
 
 $breakpoint: (
   sp: 'screen and (max-width: 767px)',
@@ -19,32 +20,32 @@ $breakpoint: (
     }
 }
 
-// @mixin linedeco {
-//     & a {
-//         color: $cblack;
-//         text-decoration: none;
-//         position: relative;
-//         font-size: 30px;
-//         display: inline-block;
-//         transition: .3s;
+@mixin lineDeco {
+    & a {
+        color: $cblack;
+        text-decoration: none;
+        position: relative;
+        font-size: 30px;
+        display: inline-block;
+        transition: .3s;
 
-//         &::after{ 
-//             position: absolute;
-//             bottom: 0;
-//             left: 50%;
-//             content: '';
-//             width: 0;
-//             height: 2px;
-//             background-color: $corange;
-//             transition: .3s;
-//             transform: translateX(-50%);
-//         }
+        &::after{ 
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            content: '';
+            width: 0;
+            height: 2px;
+            background-color: $corange;
+            transition: .3s;
+            transform: translateX(-50%);
+        }
 
-//         &:hover::after{
-//             width: 100%;
-//         }    
-//      }
-// }
+        &:hover::after{
+            width: 100%;
+        }    
+     }
+}
 
 html {
     scroll-behavior: smooth;
@@ -206,30 +207,7 @@ header {
                     cursor: pointer;
                 }
 
-                & a {
-                    color: $cblack;
-                    text-decoration: none;
-                    position: relative;
-                    font-size: 30px;
-                    display: inline-block;
-                    transition: .3s;
-    
-                    &::after{ 
-                        position: absolute;
-                        bottom: 0;
-                        left: 50%;
-                        content: '';
-                        width: 0;
-                        height: 2px;
-                        background-color: $corange;
-                        transition: .3s;
-                        transform: translateX(-50%);
-                    }
-    
-                    &:hover::after{
-                        width: 100%;
-                    }    
-                 }
+                @include lineDeco;
         }
 
     }
@@ -407,8 +385,8 @@ header {
 
 }
 
-#section0 {
-    background-color: $cgray;
+#article_section {
+    background-color: $clight_purple;
     width: 100%;
     height: 600px;
 
@@ -421,6 +399,7 @@ header {
 
     & ul{
         display: flex;
+        flex-direction: column;
 
         & li {
             list-style: none;
@@ -428,30 +407,7 @@ header {
             font-weight: 300;
             font-size: 15px;
 
-            & a {
-                color: $cblack;
-                text-decoration: none;
-                position: relative;
-                font-size: 30px;
-                display: inline-block;
-                transition: .3s;
-
-                &::after{ 
-                    position: absolute;
-                    bottom: 0;
-                    left: 50%;
-                    content: '';
-                    width: 0;
-                    height: 2px;
-                    background-color: $corange;
-                    transition: .3s;
-                    transform: translateX(-50%);
-                }
-
-                &:hover::after{
-                    width: 100%;
-                }    
-             }
+            @include lineDeco;
         }
 
     } 
@@ -464,7 +420,7 @@ header {
 
     &::before {
         content: "";
-        background-color: $cgray;
+        background-color: $clight_purple;
         display: block;
         height: 120px;
         margin-top: -120px;
